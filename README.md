@@ -16,6 +16,7 @@ Since the matrix $\bf{Q}$ is in tri-diagonal form, we can construct the proper D
  
    If we ignore the mode coupling terms
    * For Q1 part, it is a double well potential:
+   
    $$
    V_1(Q_1) = \gamma_1Q_1^2+\epsilon_1Q_1^4,\quad Q_{1,min}\approx\pm\sqrt{\frac{-\gamma_1}{2\epsilon_1}}
    $$
