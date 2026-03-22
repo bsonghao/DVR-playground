@@ -1,10 +1,10 @@
 # Model Hamiltonian
-\begin{align*}
+$$
 &\hat{H} = \hat{T} + \hat{V}\\
 &\hat{T} = \hat{T}_1\otimes\hat{1} + \hat{1}\otimes\hat{T}_2\\
 &\hat{T}_k = \frac{c_k\hat{p}_k^2}{2},\quad k=1,2\\
 &\hat{V} = \gamma_1\hat{Q}_1^2\otimes\hat{1} + \epsilon_1\hat{Q}_1^4\otimes\hat{1} + \hat{1}\otimes\kappa_2\hat{Q}_2+\hat{1}\otimes\gamma_2\hat{Q}_2^2+\gamma_{12}\hat{Q}_1\otimes\hat{Q}_2
-\end{align*}
+$$
 # 1. Contruct the DVR basis
 Since the matrix $\bf{Q}$ is in tri-diagonal form, we can construct the proper DVR through diagonalization:
 
