@@ -95,6 +95,7 @@ The quadrature rule is exact $\forall \ i,j,l: \ i+j+l\leq 2N_{k}+1$ or for $l=0
 \bf{\tilde{P}^2}^{(k)}_{H.O.} = \frac{2\bf{H}_{H.O.}^{(k)}}{\omega_k}-\left(\tilde{\bf{Q}}_k^2\right)_{H.O.}
   ```
   * Transform to DVR:
+
   ```math
   \bf{\tilde{P}^2}^{(k)}_{DVR} = \bf{U}^{(k)\dagger}\bf{\tilde{P}^2}^{(k)}_{H.O.}\bf{U}^{(k)}
   ```
