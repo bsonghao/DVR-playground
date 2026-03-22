@@ -54,7 +54,7 @@ where
 ```math
 \varphi_1(Q_{\alpha_k}) = \pi^{-\frac{1}{4}}\exp\left(-\frac{1}{2}\left(\tilde{Q}_{\alpha_k}^{(k)}-\tilde{Q}_0^{(k)}\right)^2\right)
 ```
-  * Enforce positive weights by flipping the sign of any eigenvector whose first component is negative to remove the arbitrary phase.
+  ** Enforce positive weights by flipping the sign of any eigenvector whose first component is negative to remove the arbitrary phase.
   
 **Verify the quadrature rule from the weights and grids obtained from diagonalization DVR**:
 
