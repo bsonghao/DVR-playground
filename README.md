@@ -30,36 +30,41 @@ Since the matrix $\bf{Q}$ is in tri-diagonal form, we can construct the proper D
    ```
 
   
-Convert to dimensionless Q: $\quad \tilde{Q}_k = \hat{Q}_k\sqrt{m_k\omega_k}$, we have:$\tilde{Q}_{ij}^{k} = \sqrt{m_k\omega_k}\langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=\tilde{Q}_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2}}$
+Convert to dimensionless Q: $\quad \tilde{Q}_k = \hat{Q}_k\sqrt{m_k\omega_k}$, we have:
+```math
+\tilde{Q}_{ij}^{k} = \sqrt{m_k\omega_k}\langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=\tilde{Q}_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2}}
+```
 
 * step 4: Diagonalize the $\bf{Q}$ matrix, its eigenvalues are the DVR points $\{Q_{\alpha}^{(k)}\}_{\alpha=1}^{N_k}$ and the normalized eigenvectors define the HO$\rightarrow$DVR transform
-$$
+```math
 \bf{\tilde{Q}}^{(k)} = \bf{U}^{(k)}\bf{X}^{(k)}\bf{U}^{(k)\dagger},\quad \bf{X}_{\alpha\beta}^{(k)}=\tilde{Q}_{\alpha}^{(k)}\delta_{\alpha\beta}
-$$
+```
 
-$$
+```math
 \mid\theta^{(k)}\rangle = \bf{U}^{(k)\dagger}\mid\varphi^{(k)}\rangle
-$$
+```
 
 * step 5. Obtain DVR grids and the corresponding weights:
  
   * For symmetric tri-diagonal "Jacobi" constructions, the quadrature weights are the squares of the first components of the normalized eigenvectors:
-$$
+```math
 w_{\alpha_k}^{(k)} = \left(\frac{U_{1,\alpha_k}^{(k)}}{\varphi_1(Q_{\alpha_k})}\right)^2
-$$
+```
 where
-$$
+```math
 \varphi_1(Q_{\alpha_k}) = \pi^{-\frac{1}{4}}\exp\left(-\frac{1}{2}\left(\tilde{Q}_{\alpha_k}^{(k)}-\tilde{Q}_0^{(k)}\right)^2\right)
-$$
+```
   * Enforce positive weights by flipping the sign of any eigenvector whose first component is negative to remove the arbitrary phase.
   
 **Verify the quadrature rule from the weights and grids obtained from diagonalization DVR**:
 
 The weights and grids are supposed to obey the Gaussian quadratures rule:
+$$
 \begin{align*}
 \langle\varphi_i^{(k)}\mid\tilde{Q}^{(k)}\mid\varphi_j^{(k)}\rangle &= \int w(\tilde{Q}^{(k)})\left(\tilde{Q}^{(k)}\right)^lP^*_{i-1}(\tilde{Q}^{(k)})P_{j-1}(\tilde{Q}^{(k)})d\tilde{Q}^{(k)}\\
 &=\sum_{\alpha_k=1}^{N_{k}}w_{\alpha_k}^{(k)}\varphi_i^*(\tilde{Q}_{\alpha_k}^{(k)})\left(\tilde{Q}_{\alpha_k}^{(k)}\right)^l\varphi_j(\tilde{Q}_{\alpha_k}^{(k)})
 \end{align*}
+$$
 
 
 
