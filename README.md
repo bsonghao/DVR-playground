@@ -24,7 +24,8 @@ Since the matrix $\bf{Q}$ is in tri-diagonal form, we can construct the proper D
    * Coupling $\gamma_{12}>0$ favors opposite signs for Q1 and Q2 to lower energy, so a reasonable single-well expansion point is: $Q_{0,1} \approx -3.873, \quad Q_{0,2}\approx 0.625$
      
 
-* step 3: evalulation matrix element in H.O. basis analytically: $Q_{ij}^{k} = \langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=Q_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2m_k\omega_k}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2m_k\omega_k}}$
+* step 3: evalulation matrix element in H.O. basis analytically:
+* $Q_{ij}^{k} = \langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=Q_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2m_k\omega_k}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2m_k\omega_k}}$
 
   
 Convert to dimensionless Q: $\quad \tilde{Q}_k = \hat{Q}_k\sqrt{m_k\omega_k}$, we have:$\tilde{Q}_{ij}^{k} = \sqrt{m_k\omega_k}\langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=\tilde{Q}_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2}}$
