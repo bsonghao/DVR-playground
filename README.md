@@ -120,7 +120,7 @@ $$
 
 * Using the discrete-$\delta$ property $\theta_{\alpha_k}^{(k)}(Q_{\beta_k}^{(k)})= \frac{\delta_{\alpha_k\beta_k}}{\sqrt{w_{\alpha_k}^{(k)}}}$:
 ```math
-\begin{alignd}
+\begin{aliged}
 &\psi_n(Q_{\alpha_1}^{(1)},Q_{\alpha_2}^{(2)})=\sum_{\beta_1,\beta_2}C^n_{\beta_1, \beta_2}\theta_{\beta_1}^{(1)}(Q_{\alpha_1}^{(1)})\theta_{\beta_2}^{(2)}(Q_{\alpha_2}^{(2)})\\
 &=\frac{\sum_{\beta_1,\beta_2}C^n_{\beta_1,\beta_2}\delta_{\beta_1,\alpha_1}\delta_{\beta_2,\alpha_2}}{\sqrt{w_{\beta_1}^{(1)}}\sqrt{w_{\beta_2}^{(2)}}}\\
 &=\frac{C^n_{\alpha_1,\alpha_2}}{\sqrt{w_{\alpha_1}^{(1)}}\sqrt{w_{\alpha_2}^{(2)}}},
