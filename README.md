@@ -54,62 +54,62 @@ where
 ```math
 \varphi_1(Q_{\alpha_k}) = \pi^{-\frac{1}{4}}\exp\left(-\frac{1}{2}\left(\tilde{Q}_{\alpha_k}^{(k)}-\tilde{Q}_0^{(k)}\right)^2\right)
 ```
-  ** Enforce positive weights by flipping the sign of any eigenvector whose first component is negative to remove the arbitrary phase.
+  * Enforce positive weights by flipping the sign of any eigenvector whose first component is negative to remove the arbitrary phase.
   
 **Verify the quadrature rule from the weights and grids obtained from diagonalization DVR**:
 
 The weights and grids are supposed to obey the Gaussian quadratures rule:
 ```math
-\begin{align*}
+\begin{aligned}
 \langle\varphi_i^{(k)}\mid\tilde{Q}^{(k)}\mid\varphi_j^{(k)}\rangle &= \int w(\tilde{Q}^{(k)})\left(\tilde{Q}^{(k)}\right)^lP^*_{i-1}(\tilde{Q}^{(k)})P_{j-1}(\tilde{Q}^{(k)})d\tilde{Q}^{(k)}\\
 &=\sum_{\alpha_k=1}^{N_{k}}w_{\alpha_k}^{(k)}\varphi_i^*(\tilde{Q}_{\alpha_k}^{(k)})\left(\tilde{Q}_{\alpha_k}^{(k)}\right)^l\varphi_j(\tilde{Q}_{\alpha_k}^{(k)})
-\end{align*}
+\end{aligned}
 ```
 
 
 
 Where $\forall \ i-0,1,...,N_k-1$:
-$$
+```math
 \varphi_i(\tilde{Q}_{\alpha_k}^{(k)})=\frac{1}{\sqrt{2^ii!}}\pi^{-\frac{1}{4}}\exp\left(-\frac{1}{2}(\tilde{Q}_{\alpha_k}^{(k)}-\tilde{Q}_0^k)^2\right)H_i\left(\tilde{Q}_{\alpha_k}^{(k)}-\tilde{Q}_0^k\right)
-$$
+```
 The quadrature rule is exact $\forall \ i,j,l: \ i+j+l\leq 2N_{k}+1$ or for $l=0,1$ the quadrature rule is supposed to be exact.
 
 # 2. Construct the Hamiltonian matrix
 
 * Construct kinetic energy term in DVR
   * In H.O. basis, the H.O. Hamiltonian is diagonal:
-  $$
+  ```math
   \hat{H}_{H.O.}^{(k)} = \frac{\hat{p}_k^2}{2m_k} + \frac{1}{2}m_k\omega_k^2\hat{Q}_k^2, \quad \langle\varphi_i^{(k)}\mid\hat{H}_{H.O.}^{(k)}\mid\varphi_j^{(k)}\rangle = \omega_k(j+\frac{1}{2})\delta_{ij}
-  $$
+  ```
   
   * Solve for $\hat{P}_k^2$ in H.O. basis:
-  $$
+  ```math
   \hat{P}^{2}_{k} = 2m_k\hat{H}_{H.O.}^{(k)} - m_k^2\omega_k^2\hat{Q}_k^2.
-  $$
+  ```
   Convert int dimension less momentum and position opertors:
-  $$
+  ```math
   \tilde{P}_k = \frac{\hat{P}_k}{\sqrt{m_k\omega_k}}, \quad \tilde{Q}_k = \hat{Q}_k\sqrt{m_k\omega_k}
-  $$
+  ```
   We have:
-  $$
+  ```math
 \bf{\tilde{P}^2}^{(k)}_{H.O.} = \frac{2\bf{H}_{H.O.}^{(k)}}{\omega_k}-\left(\tilde{\bf{Q}}_k^2\right)_{H.O.}
-  $$
+  ```
   * Transform to DVR:
-  $$
+  ```math
   \bf{\tilde{P}^2}^{(k)}_{DVR} = \bf{U}^{(k)\dagger}\bf{\tilde{P}^2}^{(k)}_{H.O.}\bf{U}^{(k)}
-  $$
+  ```
   
  * Potential energy in the product DVR is diagonal:
  
 On each grid point $(Q_{\alpha_1}^{(1)}, Q_{\alpha_2}^{(2)})$ compute:
-   $$
+   ```math
    \bf{V}_{DVR}^{\alpha_1,\alpha_2} = \gamma_1\left(Q_{\alpha_1}^{(1)}\right)^2\otimes\bf{I}_{N_2} + \varepsilon_1\left(Q_{\alpha_1}^{(1)}\right)^4\otimes\bf{I}_{N_2} + \bf{I}_{N_1}\otimes\kappa_2\left(Q^{(2)}_{\alpha_2}\right) + \bf{I}_{N_1}\otimes\gamma_2\left(Q^{(2)}_{\alpha_2}\right)^2 + \gamma_{12}Q_{\alpha_1}^{(1)}\otimes Q_{\alpha_2}^{(2)}.
-   $$
+   ```
    
    * Assemble the full Hamiltonian in theproduct DVR using Kronecker sums / products:
-   $$
+   ```math
    \bf{H}_{DVR} = \bf{T}_{DVR}^{(1)}\otimes\bf{I}_{N_2} + \bf{I}_{N_1}\otimes\bf{T}_{DVR}^{(2)} + \bf{V}_{DVR}
-   $$
+   ```
    
 * Diagonalize H and report the five lowest eigenvalues.
 $$
@@ -119,13 +119,15 @@ $$
 # 3. Wave functions on the DVR grid
 
 * Using the discrete-$\delta$ property $\theta_{\alpha_k}^{(k)}(Q_{\beta_k}^{(k)})= \frac{\delta_{\alpha_k\beta_k}}{\sqrt{w_{\alpha_k}^{(k)}}}$:
-\begin{align*}
+```math
+\begin{alignd}
 &\psi_n(Q_{\alpha_1}^{(1)},Q_{\alpha_2}^{(2)})=\sum_{\beta_1,\beta_2}C^n_{\beta_1, \beta_2}\theta_{\beta_1}^{(1)}(Q_{\alpha_1}^{(1)})\theta_{\beta_2}^{(2)}(Q_{\alpha_2}^{(2)})\\
 &=\frac{\sum_{\beta_1,\beta_2}C^n_{\beta_1,\beta_2}\delta_{\beta_1,\alpha_1}\delta_{\beta_2,\alpha_2}}{\sqrt{w_{\beta_1}^{(1)}}\sqrt{w_{\beta_2}^{(2)}}}\\
 &=\frac{C^n_{\alpha_1,\alpha_2}}{\sqrt{w_{\alpha_1}^{(1)}}\sqrt{w_{\alpha_2}^{(2)}}},
-\end{align*}
+\end{aligned}
+```
 where
-$$
+```math
 C_{\alpha_1,\alpha_2}^n = \langle\theta_{\alpha_1}^{(1)}\theta_{\alpha_2}^{(2)}\mid\psi_n\rangle 
-$$
+```
 is the reshaped eigenvector of $\bf{H}_{DVR}$.
