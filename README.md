@@ -10,9 +10,9 @@ $$
 # 1. Contruct the DVR basis
 Since the matrix $\bf{Q}$ is in tri-diagonal form, we can construct the proper DVR through diagonalization:
 
-* step 1: Choose $m_k=1$ and $\omega_k=1$ to keep the scaling consistent and numerically stable
+* **step 1**: Choose $m_k=1$ and $\omega_k=1$ to keep the scaling consistent and numerically stable
 
-* step 2: Choose equilibrium shifts $Q_{0,k}$ based on V:
+* **step 2**: Choose equilibrium shifts $Q_{0,k}$ based on V:
  
    If we ignore the mode coupling terms
    * For Q1 part, it is a double well potential: $V_1(Q_1) = \gamma_1Q_1^2+\epsilon_1Q_1^4,\quad Q_{1,min}\approx\pm\sqrt{\frac{-\gamma_1}{2\epsilon_1}}$
@@ -24,7 +24,7 @@ Since the matrix $\bf{Q}$ is in tri-diagonal form, we can construct the proper D
    * Coupling $\gamma_{12}>0$ favors opposite signs for Q1 and Q2 to lower energy, so a reasonable single-well expansion point is: $Q_{0,1} \approx -3.873, \quad Q_{0,2}\approx 0.625$
      
 
- * step 3: evalulation matrix element in H.O. basis analytically
+ * **step 3**: evalulation matrix element in H.O. basis analytically
   ```math
   Q_{ij}^{k} = \langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=Q_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2m_k\omega_k}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2m_k\omega_k}}
    ```
@@ -35,7 +35,7 @@ Convert to dimensionless Q: $\quad \tilde{Q}_k = \hat{Q}_k\sqrt{m_k\omega_k}$, w
 \tilde{Q}_{ij}^{k} = \sqrt{m_k\omega_k}\langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=\tilde{Q}_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2}}
 ```
 
-* step 4: Diagonalize the $\bf{Q}$ matrix, its eigenvalues are the DVR points $\{Q_{\alpha}^{(k)}\}_{\alpha=1}^{N_k}$ and the normalized eigenvectors define the HO$\rightarrow$DVR transform
+* **step 4**: Diagonalize the $\bf{Q}$ matrix, its eigenvalues are the DVR points $\{Q_{\alpha}^{(k)}\}_{\alpha=1}^{N_k}$ and the normalized eigenvectors define the HO$\rightarrow$DVR transform
 ```math
 \bf{\tilde{Q}}^{(k)} = \bf{U}^{(k)}\bf{X}^{(k)}\bf{U}^{(k)\dagger},\quad \bf{X}_{\alpha\beta}^{(k)}=\tilde{Q}_{\alpha}^{(k)}\delta_{\alpha\beta}
 ```
@@ -44,7 +44,7 @@ Convert to dimensionless Q: $\quad \tilde{Q}_k = \hat{Q}_k\sqrt{m_k\omega_k}$, w
 \mid\theta^{(k)}\rangle = \bf{U}^{(k)\dagger}\mid\varphi^{(k)}\rangle
 ```
 
-* step 5. Obtain DVR grids and the corresponding weights:
+* **step 5**: Obtain DVR grids and the corresponding weights:
  
   * For symmetric tri-diagonal "Jacobi" constructions, the quadrature weights are the squares of the first components of the normalized eigenvectors:
 ```math
@@ -59,12 +59,12 @@ where
 **Verify the quadrature rule from the weights and grids obtained from diagonalization DVR**:
 
 The weights and grids are supposed to obey the Gaussian quadratures rule:
-$$
+```math
 \begin{align*}
 \langle\varphi_i^{(k)}\mid\tilde{Q}^{(k)}\mid\varphi_j^{(k)}\rangle &= \int w(\tilde{Q}^{(k)})\left(\tilde{Q}^{(k)}\right)^lP^*_{i-1}(\tilde{Q}^{(k)})P_{j-1}(\tilde{Q}^{(k)})d\tilde{Q}^{(k)}\\
 &=\sum_{\alpha_k=1}^{N_{k}}w_{\alpha_k}^{(k)}\varphi_i^*(\tilde{Q}_{\alpha_k}^{(k)})\left(\tilde{Q}_{\alpha_k}^{(k)}\right)^l\varphi_j(\tilde{Q}_{\alpha_k}^{(k)})
 \end{align*}
-$$
+```
 
 
 
