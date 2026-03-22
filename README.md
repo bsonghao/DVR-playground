@@ -78,9 +78,10 @@ The quadrature rule is exact $\forall \ i,j,l: \ i+j+l\leq 2N_{k}+1$ or for $l=0
 
 * Construct kinetic energy term in DVR
   * In H.O. basis, the H.O. Hamiltonian is diagonal:
-  ```math
+
+    ```math
   \hat{H}_{H.O.}^{(k)} = \frac{\hat{p}_k^2}{2m_k} + \frac{1}{2}m_k\omega_k^2\hat{Q}_k^2, \quad \langle\varphi_i^{(k)}\mid\hat{H}_{H.O.}^{(k)}\mid\varphi_j^{(k)}\rangle = \omega_k(j+\frac{1}{2})\delta_{ij}
-  ```
+    ```
   
   * Solve for $\hat{P}_k^2$ in H.O. basis:
   ```math
