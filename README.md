@@ -18,24 +18,16 @@ Since the matrix $\bf{Q}$ is in tri-diagonal form, we can construct the proper D
    * For Q1 part, it is a double well potential: $V_1(Q_1) = \gamma_1Q_1^2+\epsilon_1Q_1^4,\quad Q_{1,min}\approx\pm\sqrt{\frac{-\gamma_1}{2\epsilon_1}}$
 
    
-   * For Q2 part, it is a displace harmonic potential:
-   $$
-   V_2(Q_2) = \gamma_2Q_2^2+\kappa_2Q_2, \quad Q_{2,min}\approx -\frac{\kappa_2}{2\gamma_2}
-   $$
+   * For Q2 part, it is a displace harmonic potential: $V_2(Q_2) = \gamma_2Q_2^2+\kappa_2Q_2, \quad Q_{2,min}\approx -\frac{\kappa_2}{2\gamma_2}$
    
-   * Coupling $\gamma_{12}>0$ favors opposite signs for Q1 and Q2 to lower energy, so a reasonable single-well expansion point is
-   $$
-   Q_{0,1} \approx -3.873, \quad Q_{0,2}\approx 0.625
-   $$
+   
+   * Coupling $\gamma_{12}>0$ favors opposite signs for Q1 and Q2 to lower energy, so a reasonable single-well expansion point is: $Q_{0,1} \approx -3.873, \quad Q_{0,2}\approx 0.625$
+     
 
-* step 3: evalulation matrix element in H.O. basis analytically:
-$$
-Q_{ij}^{k} = \langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=Q_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2m_k\omega_k}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2m_k\omega_k}}
-$$
-Convert to dimensionless Q: $ \quad \tilde{Q}_k = \hat{Q}_k\sqrt{m_k\omega_k}$, we have:
-$$
-\tilde{Q}_{ij}^{k} = \sqrt{m_k\omega_k}\langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=\tilde{Q}_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2}}
-$$
+* step 3: evalulation matrix element in H.O. basis analytically: $Q_{ij}^{k} = \langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=Q_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2m_k\omega_k}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2m_k\omega_k}}$
+  
+Convert to dimensionless Q: $ \quad \tilde{Q}_k = \hat{Q}_k\sqrt{m_k\omega_k}$, we have:$\tilde{Q}_{ij}^{k} = \sqrt{m_k\omega_k}\langle\varphi_i^{(k)}\mid\hat{Q}_k\mid\varphi_j^{(k)}\rangle=\tilde{Q}_0^{(k)}\delta_{ij} + \delta_{i,j-1}\sqrt{\frac{j}{2}}+\delta_{i,j+1}\sqrt{\frac{j+1}{2}}$
+
 * step 4: Diagonalize the $\bf{Q}$ matrix, its eigenvalues are the DVR points $\{Q_{\alpha}^{(k)}\}_{\alpha=1}^{N_k}$ and the normalized eigenvectors define the HO$\rightarrow$DVR transform
 $$
 \bf{\tilde{Q}}^{(k)} = \bf{U}^{(k)}\bf{X}^{(k)}\bf{U}^{(k)\dagger},\quad \bf{X}_{\alpha\beta}^{(k)}=\tilde{Q}_{\alpha}^{(k)}\delta_{\alpha\beta}
