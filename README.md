@@ -112,9 +112,9 @@ On each grid point $(Q_{\alpha_1}^{(1)}, Q_{\alpha_2}^{(2)})$ compute:
    ```
    
 * Diagonalize H and report the five lowest eigenvalues.
-$$
+```math
 \bf{H}_{DVR}\bf{C} = \bf{C}\bf{E},\quad \bf{E}_{ij}=\varepsilon_i\delta_{ij}
-$$
+```
 
 # 3. Wave functions on the DVR grid
 
