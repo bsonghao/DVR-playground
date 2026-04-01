@@ -118,7 +118,7 @@ On each grid point $(Q_{\alpha_1}^{(1)}, Q_{\alpha_2}^{(2)})$ compute:
 
 # 3. Wave functions on the DVR grid
 
-* Using the discrete-$\delta$ property $\theta_{\alpha_k}^{(k)}(Q_{\beta_k}^{(k)})= \frac{\delta_{\alpha_k\beta_k}}{\sqrt{w_{\alpha_k}^{(k)}}}$:
+* Using the discrete $\delta$ property $\theta_{\alpha_k}^{(k)}(Q_{\beta_k}^{(k)})= \frac{\delta_{\alpha_k\beta_k}}{\sqrt{w_{\alpha_k}^{(k)}}}$:
 ```math
 \begin{aligned}
 &\psi_n(Q_{\alpha_1}^{(1)},Q_{\alpha_2}^{(2)})=\sum_{\beta_1,\beta_2}C^n_{\beta_1, \beta_2}\theta_{\beta_1}^{(1)}(Q_{\alpha_1}^{(1)})\theta_{\beta_2}^{(2)}(Q_{\alpha_2}^{(2)})\\
